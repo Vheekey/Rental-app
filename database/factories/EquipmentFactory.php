@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Equipment;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class EquipmentFactory extends Factory
 {
@@ -22,7 +23,9 @@ class EquipmentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->word(),
+            'code' => strtoupper(Str::random(5)),
+            'status' => $this->faker->randomElement([Equipment::AVAILABLE, Equipment::UNAVAILABLE])
         ];
     }
 }

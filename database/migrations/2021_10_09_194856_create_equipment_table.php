@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Equipment;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,6 +16,9 @@ class CreateEquipmentTable extends Migration
     {
         Schema::create('equipment', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('code');
+            $table->tinyInteger('status')->default(Equipment::AVAILABLE);
             $table->timestamps();
         });
     }

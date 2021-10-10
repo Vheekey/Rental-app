@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Book;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class BookFactory extends Factory
 {
@@ -22,7 +23,9 @@ class BookFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->word(),
+            'code' => strtoupper(Str::random(5)),
+            'status' => $this->faker->randomElement([Book::AVAILABLE, Book::UNAVAILABLE])
         ];
     }
 }

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Activity extends Model
 {
     use HasFactory;
+
+    protected $guarded = ['id'];
+
+    const RETURNED = 0;
+    const RENTED = 1;
 }
