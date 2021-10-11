@@ -12,20 +12,41 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+    /**
+     * Get Dashboard statistics graph
+     *
+     * @param StatisticsRequest $request
+     * @return void
+     */
+
     public function index(StatisticsRequest $request)
     {
         $activities = $this->statistics($request);
 
-        $period = "from ".$request->start." to ".$request->end;
+        $period = "from ".($request->start ?? Carbon::today()->toDateString())." to ".($request->end ?? Carbon::today()->toDateString());
 
         return view('welcome')->with('activities', (count($activities) > 0) ? json_encode($activities[0]) : json_encode([]))->with('period',$period);
     }
 
+
+    /**
+     * Get statistics for api
+     *
+     * @param StatisticsRequest $request
+     * @return void
+     */
+
     public function apiStatistics(StatisticsRequest $request)
     {
-        return $this->statistics($request);
+        return $this->okResponse('Statistics Retrieved', $this->statistics($request));
     }
 
+    /**
+     * Compute Statistics
+     *
+     * @param Request $request
+     * @return mixed
+     */
     protected function statistics(Request $request)
     {
 

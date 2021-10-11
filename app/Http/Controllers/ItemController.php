@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\DB;
 
 class ItemController extends Controller
 {
+    /**
+     * Retrieve Items and Item searches
+     *
+     * @param ItemSearchRequest $request
+     * @return void
+     */
     public function index(ItemSearchRequest $request)
     {
         $result = [];
