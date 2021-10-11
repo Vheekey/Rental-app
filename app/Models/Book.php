@@ -13,4 +13,19 @@ class Book extends Model
 
     const AVAILABLE = 1;
     const UNAVAILABLE = 0;
+
+
+    public function activity()
+    {
+        return $this->morphMany(Activity::class, 'itemable');
+    }
+
+    public function availability()
+    {
+        if($this->status){
+            return 'AVAILABLE';
+        }
+
+        return 'UNAVAILABLE';
+    }
 }

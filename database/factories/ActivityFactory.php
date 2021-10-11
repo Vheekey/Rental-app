@@ -27,8 +27,8 @@ class ActivityFactory extends Factory
     {
         return [
             'user_id' => User::factory()->create()->id,
-            'item_type' => $this->faker->randomElement([Equipment::class, Book::class]),
-            'item_id' => $this->faker->unique()->numberBetween(1,10),
+            'itemable_type' => $this->faker->randomElement([Equipment::class, Book::class]),
+            'itemable_id' => $this->faker->unique()->numberBetween(1,10),
             'status' => $this->faker->randomElement([Activity::RENTED, Activity::RETURNED])
         ];
     }

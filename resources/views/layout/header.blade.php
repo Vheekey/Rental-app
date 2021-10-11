@@ -18,20 +18,20 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3 mt-3 text-white">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">R3nt@lz</a>
+              <a class="navbar-brand" href="{{ route('home') }}">R3nt@lz</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-lg-0 navbar-nav-scroll">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" title="Home"><i class="fa fa-house-chimney me-2 ms-3"></i><span class="">Home</span></a>
+                        <a class="nav-link {{ Request::url() == route('home') ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}" title="Home"><i class="fa fa-house-chimney me-2 ms-3"></i><span class="">Home</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" title="Users"><i class="fa-solid fa-users me-2 ms-3"></i> <span class="">Users</span></a>
+                        <a class="nav-link {{ Request::url() == route('users') ? 'active' : '' }}" href="{{ route('users') }}" title="Users"><i class="fa-solid fa-users me-2 ms-3"></i> <span class="">Users</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" title="Items"><i class="fa-solid fa-swatchbook me-2 ms-3"></i> <span class="">Items</span></a>
+                        <a class="nav-link {{ Request::url() == route('items') ? 'active' : '' }}" href="{{ route('items') }}" title="Items"><i class="fa-solid fa-swatchbook me-2 ms-3"></i> <span class="">Items</span></a>
                     </li>
                     @if(Request::url() === route('home'))
                         <li class="nav-item">
