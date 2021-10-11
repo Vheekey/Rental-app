@@ -1,4 +1,5 @@
-# NQLB Activity Log
+# RENTALS
+<p>A simple rental application with an admin statistics Dashboard</p>
 
 ## Introduction
 <p> This application contains an admin end to a hiring client side app on the renting and returning of books and equipments </p>
@@ -12,3 +13,5 @@
     <li> Dig In </li>
 </ol>
 
+## Postman Documentation
+<a href="https://documenter.getpostman.com/view/5792960/UV5RngPz">https://documenter.getpostman.com/view/5792960/UV5RngPz</a>
