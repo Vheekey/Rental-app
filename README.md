@@ -15,3 +15,6 @@
 
 ## Postman Documentation
 <a href="https://documenter.getpostman.com/view/5792960/UV5RngPz">https://documenter.getpostman.com/view/5792960/UV5RngPz</a>
+
+## ER Diagram
+<img src="https://embed.creately.com/7C3aGB9I2ML?token=BzJOn4FtLzFZYXRL&type=svg">
